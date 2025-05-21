@@ -683,7 +683,7 @@ img {
   width: 110%;
   height: 110%;
   border-radius: 20px;
-  background-color: #44aac0;
+  background-color: rgba(255, 255, 255, 0.6);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -716,9 +716,9 @@ img {
 
 .portf-case-btn {
   width: 50%;
-  /* margin: 0 auto; */
   padding: 15px 20px;
   background: #E4572E;
+  color: #ffffff;
   border: none;
   border-radius: 20px;
   cursor: pointer;
@@ -732,15 +732,12 @@ img {
 
 .portf-case-btn:hover {
   background: #bbddee;
+  color: #1d2d57;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 .portf-case-link {
   text-align: center;
-}
-
-.portf-case-btn:hover .portf-case-link {
-  color: #1d2d57;
 }
 
 /*about*/
@@ -957,6 +954,66 @@ img {
   margin-bottom: 20px;
 }
 
+.contacts-form input::placeholder {
+  color: #cacaca;
+}
+
+.privacy-wrap {
+  margin-left: 20px;
+}
+
+.form-privacy {
+  position: relative;
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+  font-weight: 400;
+  margin-bottom: 20px;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.form-privacy:hover {
+  cursor: pointer;
+}
+
+#checkbox {
+  display: none; 
+}
+
+.form-privacy::before {
+  content: '';
+  align-self: flex-start;
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  margin-right: 12px;
+  transform: translateY(2px);
+  border: 1px solid #333;
+  background-color: #fff;
+}
+
+#checkbox:checked + .form-privacy::before {
+  content: "\2714";
+  width: 18px;
+  height: 18px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border: 1px solid #333;
+  background-color: #fff;
+}
+
+.form-privacy {
+  display: inline-flex;
+  width: 100%;
+  font-size: 1em;
+  /* margin-bottom: 20px; */
+  align-items: center; 
+}
+
 .contacts-btn {
   width: 50%;
   padding: 15px 30px;
@@ -972,10 +1029,9 @@ img {
 }
 
 .contacts-btn:hover {
-  background: #bbddee;
+  background: #e4572e;
   color: #1d2d57;
-  border: 2px solid #1d2d57;
-  box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.4);
+  box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.6);
 }
 
 /*footer*/

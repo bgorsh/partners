@@ -417,11 +417,16 @@
             <div class="contacts-form">
               <div class="contacts-form-wrap">
                 <h3 class="contacts-form-title title">Оставить заявку</h3>
-                <form action="#" method="post" class="contacts-form">
-                  <input type="text" name="name" placeholder="Ваше имя">
-                  <input type="email" name="email" placeholder="Ваш e-mail">
-                  <input type="tel" name="tel" placeholder="Ваш телефон">
-                  <button type='submit' class="contacts-btn">Отправить</button>
+                <form action="#" id="form" method="post" class="contacts-form">
+                  <input type="text" name="name" id="name" class="form-input _error" required placeholder="Ваше имя">
+                  <input type="email" name="email" id="email" class="form-input _error" required placeholder="Ваш e-mail">                  
+                  <div id="email-error" style="color: red; font-size: 14px; display: none;">Введите правильный email</div>
+                  <input type="phone" name="phone" id="phone" class="form-input _error" required placeholder="Ваш телефон">
+                  <div class="privacy-wrap">
+                    <input type="checkbox" name="agreement" checked id="checkbox">
+                    <label for="checkbox" class="form-privacy">Соглашаюсь с обработкой моих персональных данных</label>    
+                  </div>
+                  <button type="submit" id="submit" class="contacts-btn">Отправить</button>
                 </form>
               </div>              
             </div>
@@ -452,5 +457,7 @@
     </footer>
 
   </section>
+  <script src="scripts/just-validate.min.js"></script>
+  <script src="scripts/inputmask.min.js"></script>
 </body>
 </html>
