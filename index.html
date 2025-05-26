@@ -28,12 +28,27 @@
             <li class='menu-item'><a href="#pains" rel="noopener noreferrer" class='menu-link'>В чём затык?</a></li>
             <li class='menu-item'><a href="#result" rel="noopener noreferrer" class='menu-link'>Что получаешь</a></li>
             <li class='menu-item'><a href="#advantages" rel="noopener noreferrer" class='menu-link'>Преимущества</a></li>
-            <li class='menu-item'><a href="#price" rel="noopener noreferrer" class='menu-link'>Цены</a></li>
+            <li class='menu-item'><a href="#price" rel="noopener noreferrer" class='menu-link'>Тарифы</a></li>
             <li class='menu-item'><a href="#cases" rel="noopener noreferrer" class='menu-link'>Кейсы</a></li>
             <li class='menu-item'><a href="#about" rel="noopener noreferrer" class='menu-link'>Обо мне</a></li>
             <li class='menu-item'><a href="#contacts" rel="noopener noreferrer" class='menu-link'>Контакты / Заказ разработки</a></li>
           </ul>
-        </nav>        
+        </nav>
+        <button class="burger-btn">
+          <span class="burger-icon">
+            <?xml version="1.0" ?><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_105_1724)">
+                <path d="M3 6.00098H21M3 12.001H21M3 18.001H21" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" />
+              </g>
+              <defs>
+                <clipPath id="clip0_105_1724">
+                  <rect fill="white" height="24" transform="translate(0 0.000976562)" width="24" />
+                </clipPath>
+              </defs>
+              </svg>
+          </span>
+        </button>        
       </div>
     </header>
 
@@ -82,7 +97,9 @@
 
       <section class="result" id='result'>
         <div class="container">
-          <h2 class="result-title title">Что ты получаешь в результате</h2>
+          <div class="result-title-wrap">
+            <h2 class="result-title title">Что ты получаешь в результате</h2>
+          </div>         
           <div class="result-list">
             <div class="result-item">
               <img src="img/result/1.png" alt="result">
@@ -415,13 +432,13 @@
             </div>
             <div class="vertical-line"></div>
             <div class="contacts-form">
-              <div class="contacts-form-wrap">
-                <h3 class="contacts-form-title title">Оставить заявку</h3>
+              <div class="contacts-form-wrap"> 
+                <h3 class="contacts-form-title title">Оставить заявку</h3>             
                 <form action="#" id="form" method="post" class="contacts-form">
                   <input type="text" name="name" id="name" class="form-input _error" required placeholder="Ваше имя">
                   <input type="email" name="email" id="email" class="form-input _error" required placeholder="Ваш e-mail">                  
                   <div id="email-error" style="color: red; font-size: 14px; display: none;">Введите правильный email</div>
-                  <input type="phone" name="phone" id="phone" class="form-input _error" required placeholder="Ваш телефон">
+                  <input type="tel" name="tel" id="tel" class="form-input _error" required placeholder="Ваш телефон">
                   <div class="privacy-wrap">
                     <input type="checkbox" name="agreement" checked id="checkbox">
                     <label for="checkbox" class="form-privacy">Соглашаюсь с обработкой моих персональных данных</label>    
@@ -445,7 +462,7 @@
           </div>
           <div class="footer-text">
             <p class="footer-text-item">© <script>var year = new Date()
-              document.write(year.getFullYear());</script> Горшунов Борис</p>
+              document.write(year.getFullYear());</script> Горшунов Борис | Все права защищены | <a href="#" class="footer-link">Политика конфедициальности</a></p>
           </div>
           <div class="footer-icons">
             <script src="https://yastatic.net/share2/share.js"></script>

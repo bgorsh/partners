@@ -1,5 +1,6 @@
-// Parallax photo in hero
 
+
+// Parallax photo in hero
 document.addEventListener("DOMContentLoaded", function() {
   const layer = document.querySelector('.hero-img');
   document.addEventListener('mousemove', (event) => {
@@ -28,7 +29,7 @@ document.querySelector('.accord-sect').click();
 
 //Form validate
 
-let selector = document.querySelector("input[type='phone']");
+let selector = document.querySelector("input[type='tel']");
 let im = new Inputmask("+7 (999) 999-99-99");
 
 im.mask(selector);
@@ -58,48 +59,91 @@ new JustValidate('.contacts-form', {
   }
 });
 
-//Validate form and correct filling of form fields 
-let name = document.getElementById('name')
-let email = document.getElementById('email')
-let phone = document.getElementById('phone')
-let emailError = document.getElementById('email-error')
+// Validation of correctness of input into form fields
 
-let fields = [name, email, phone]
+const nameInput = document.getElementById('name')
+const emailInput = document.getElementById('email')
+const telInput = document.getElementById('tel')
 
-document.getElementById('submit').addEventListener('click', function () {
-	let isValid = true
+// Функция валидации имени
+function validateName() {
+	const value = nameInput.value.trim()
+	if (value === '') {
+		nameInput.style.borderColor = 'red'
+		return false
+	}
+	nameInput.style.borderColor = '#44aacc'
+	return true
+}
 
-	// Очистка сообщений об ошибках
-	emailError.style.display = 'none'
-
-	// Проверка пустых полей
-	fields.forEach(field => {
-		if (!field.value.trim()) {
-			field.style.borderColor = 'red'
-			isValid = false
-		} else {
-			field.style.borderColor = 'white'
-		}
-	})
-
-	// Проверка email
+// Функция валидации email
+function validateEmail() {
+	const value = emailInput.value.trim()
 	const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/
-	if (email.value.trim() && !emailRegex.test(email.value.trim())) {
-		email.style.borderColor = 'red'
-		emailError.style.display = 'block'
-		isValid = false
+	if (!emailRegex.test(value)) {
+		emailInput.style.borderColor = 'red'
+		return false
 	}
+	emailInput.style.borderColor = '#44aacc'
+	return true
+}
 
-	// Проверка номера телефона
-	const digitsOnly = phone.value.replace(/\\D/g, '')
-	if (phone.value.trim() && digitsOnly.length < 10) {
-		phone.style.borderColor = 'red'
-		isValid = false
+// Функция валидации телефона
+function validateTel() {
+	const value = telInput.value.trim()
+	const telRegex = /^\\+?[0-9]{10,15}$/
+	if (!telRegex.test(value)) {
+		telInput.style.borderColor = 'red'
+		return false
 	}
+	telInput.style.borderColor = '#44aacc'
+	return true
+}
 
-	if (isValid) {
-		alert('Спасибо за заказ! Мы скоро свяжемся с вами')
-		fields.forEach(field => (field.value = ''))
-		emailError.style.display = 'none'
+// Обработчики событий ввода
+nameInput.addEventListener('input', validateName)
+emailInput.addEventListener('input', validateEmail)
+telInput.addEventListener('input', validateTel)
+
+// Обработка отправки формы
+document.querySelector('form').addEventListener('submit', function (e) {
+	const isNameValid = validateName()
+	const isEmailValid = validateEmail()
+	const isTelValid = validateTel()
+
+	if (!isNameValid || !isEmailValid || !isTelValid) {
+		e.preventDefault() // Блокируем отправку при ошибках
+	} else {
+		e.preventDefault() // Для примера не отправляем форму на сервер
+		alert('Спасибо за заказ! Я скоро свяжусь с вами')
+		this.reset()
+		nameInput.style.borderColor = '#44aacc'
+		emailInput.style.borderColor = '#44aacc'
+		telInput.style.borderColor = '#44aacc'
 	}
 })
+
+// Mobile menu
+
+const burger = document.querySelector('.burger-btn')
+const link = document.querySelectorAll('.menu-link');
+const mobMenu = document.querySelector('.menu-list');
+const hero = document.querySelector('.hero');
+
+burger.onclick = function() {
+  mobMenu.classList.toggle('active');
+  wrap.classList.toggle('lock');
+}
+
+link.forEach(function(item) {
+  item.onclick = function() {
+    mobMenu.classList.remove('active');
+    wrap.classList.remove('lock');
+  }
+});
+
+hero.onclick = function () {
+	mobMenu.classList.remove('active')
+	wrap.classList.remove('lock')
+}
+
