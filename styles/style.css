@@ -35,7 +35,7 @@ img {
 }
 
 .title {
-  font-family: 'Roboto Flex', sans-serif;
+  font-family: "Roboto Flex", sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
   color: #1F2B57;
@@ -1312,34 +1312,47 @@ img {
 
 .contacts-icons {
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   align-items: center;
-  justify-content: center;
+  text-align: left;
   margin-bottom: 50px;
 }
 
-.contacts-link--telega {
+.contacts-link--telega, .vk-link {
   display: flex;
   flex-direction: row;
-  justify-content: start;
-  align-items: center;
+  align-items: start;
+}
+
+.vk-link {
+  transform: translateX(-23px);
 }
 
 .contacts-icon {
   width: 50px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: start;
   margin-bottom: 20px;
 }
 
-.telega-icon {
+.telega-icon, .vk-icon {
   width: 30px;
   height: 30px;
+  margin-right: 5px;
+  float: left;
   transition: all 0.5s ease-in-out;
 }
 
-.telega-text {
+.vk-link:hover .vk-icon {
+  fill: #44aac0;
+  transform: scale(.9, .9);
+}
+
+.telega-text, .vk-text {
   font-size: 1.4rem;
   font-weight: 600;
   line-height: 150%;
@@ -1349,12 +1362,16 @@ img {
   transition: all 0.5s ease-in-out;
 }
 
-.telega-icon:hover {
+.vk-link:hover .vk-text {
+  color: #1d2d57;
+}
+
+.contacts-link--telega:hover .telega-icon {
   fill: #44aac0;
   transform: scale(.9, .9);
 }
 
-.telega-text:hover {
+.contacts-link--telega:hover .telega-text {
   color: #1d2d57;
 }
 

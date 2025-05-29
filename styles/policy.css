@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+html {
+  box-sizing: border-box;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fdf0d5;
+  font-family: "PT Sans", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  color: #1d2d57;
+}
+
+a {
+  text-decoration: none;
+}
+
+p,h1 {
+  margin: 0;
+}
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.page__title {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 20px;
+  font-size: 65px;
+  font-weight: 800;
+  line-height: 70px;
+  text-align: center;
+}
+
+.text__paragraph {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  margin-bottom: 30px;
+}
+
+.page__subtitle {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 50px;
+}
+
+.page__subtitle-one {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 40px;
+  margin-bottom: 30px;
+}
+
+.admin__paragraph {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  margin-bottom: 30px;
+}
+
+

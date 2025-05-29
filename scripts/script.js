@@ -147,3 +147,33 @@ hero.onclick = function () {
 	wrap.classList.remove('lock')
 }
 
+// JavaScript: отправка формы с данными в формате JSON
+document.getElementById('form').addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const tel = document.getElementById('tel').value.trim();
+
+  const data = { name, email, tel };
+
+  try {
+    const response = await fetch('mail.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+
+    if (response.ok) {
+      alert('Форма успешно отправлена!');
+      document.getElementById('form').reset();
+    } else {
+      alert('Ошибка при отправке формы.');
+    }
+  } catch (error) {
+    console.error('Ошибка:', error);
+    alert('Произошла ошибка при отправке данных.');
+  }
+});
