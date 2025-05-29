@@ -1324,10 +1324,13 @@ img {
 .contacts-link--telega, .vk-link {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: start;
 }
 
 .vk-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
   transform: translateX(-25px);
 }
 
@@ -1477,7 +1480,6 @@ img {
   display: inline-flex;
   width: 100%;
   font-size: 1em;
-  /* margin-bottom: 20px; */
   align-items: center; 
 }
 
@@ -1518,8 +1520,22 @@ img {
     transition: all 0.5s ease-in-out;
   }
 
+  .vk-link {
+    transform: translateX(0);
+  }
+
   .contacts-wrap {
     flex-direction: column;
+  }
+
+  .contacts-link--telega, .vk-link {
+    width: 100%;
+    text-align: left;
+  }
+
+  .contacts-icons {
+    width: 100%;
+    padding: 0 20px;
   }
 
   .contacts-form {
